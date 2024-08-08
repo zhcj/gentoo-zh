@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2021-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -24,8 +24,7 @@ fi
 LICENSE="MIT"
 SLOT="0"
 
-DEPEND=""
-RDEPEND="${DEPEND}
+RDEPEND="
 	!dev-libs/v2ray-domain-list-community-bin
 	!<net-proxy/v2ray-4.38.3
 "
@@ -47,8 +46,8 @@ src_compile() {
 }
 
 src_install() {
-	insinto /usr/share/v2ray
-	newins dlc.dat geosite.dat
+	insinto /usr/share/geosite/
+	newins dlc.dat v2fly.dat
 }
 
 pkg_postinst() {

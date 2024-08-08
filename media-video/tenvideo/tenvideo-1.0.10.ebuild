@@ -13,13 +13,17 @@ SRC_URI="https://dldir1.qq.com/qqtv/linux/Tenvideo_universal_${PV}_amd64.deb"
 
 SLOT="0"
 #RESTRICT="strip mirror" # mirror as explained at bug #547372
-LICENSE="Tencent-EULA"
-IUSE=""
+LICENSE="tenvideo-privacy"
 
 RDEPEND="
+	app-accessibility/at-spi2-atk
+	dev-libs/nss
+	media-libs/alsa-lib
+	x11-libs/gtk+:3
+	x11-libs/libXScrnSaver
 "
-DEPEND=""
-BDEPEND=""
+
+QA_PREBUILT="*"
 
 S="${WORKDIR}"
 

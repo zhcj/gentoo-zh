@@ -6,20 +6,16 @@ EAPI=7
 inherit autotools git-r3
 
 DESCRIPTION="Tools for Flash-Friendly File System (F2FS)"
-HOMEPAGE="http://sourceforge.net/projects/f2fs-tools/"
-SRC_URI=""
+HOMEPAGE="https://sourceforge.net/projects/f2fs-tools/"
 
 EGIT_REPO_URI="https://git.kernel.org/pub/scm/linux/kernel/git/jaegeuk/f2fs-tools.git"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
 
 src_prepare() {
+	default
 	echo 'mkfs_f2fs_LDFLAGS = ' >> mkfs/Makefile.am
 	eautoreconf
 }
